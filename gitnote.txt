@@ -1,0 +1,45 @@
+远程仓库
+	创建ssh key
+		cd ~/.ssh
+		ssh -keygen -t rsa -C "youremail@example.coom"
+	判断是否连通
+		ssh -T git@github.com(第一次会有警告)
+
+	添加远程仓库
+		github 创建库
+		本地修改（eg: echo "内容" >> test.txt)
+		本地git库初始化：git init
+		添加到暂存区：git add test.txt
+		提交：git commit -m"说明"
+		关联远程仓库：git remote add origin git@github.com:jcyw/test.git
+		推送：git push -u origin master
+
+		如果后面修改test.txt：
+			git add test.txt
+			git commit -m"说明"
+			git push
+
+修改远程仓库地址：
+	直接修改：git remote set-url origin 地址
+	先删除再添加：git remote rm origin
+				git remote add origin 地址
+	直接修改配置文件：cd git_test/.git
+					vim config(修改[remote "origin"]下的url即可)
+	通过第三方git客服端修改
+
+git add -A :添加所有变化
+git add -u :添加被修改（modified）和删除（deleted)文件，不包括新文件（new）
+git add . :添加新文件和被修改文件，不包括被删除文件
+
+
+克隆仓库
+	克隆：git clone git@github.com:jcyw/test.git
+	查看状态：git status
+	进入工程文件：cd test
+
+	modified:echo "clone demo" >> clone.txt
+
+	添加and上传：
+		git add clone.txt
+		git commit -m "说明"
+		git push
