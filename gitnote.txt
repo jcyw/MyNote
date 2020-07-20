@@ -43,3 +43,53 @@ git add . :添加新文件和被修改文件，不包括被删除文件
 		git add clone.txt
 		git commit -m "说明"
 		git push
+
+
+
+
+2020-7-20
+	
+
+
+	
+时光穿梭：HEAD指向的版本就是当前版本，版本跳转命令：git reset --hard commit_id
+		 git log查看提交历史，以便确定回退版本
+		 git reflog 查看命令历史，确定要回到未来哪个版本
+
+工作区和暂存区：
+		 工作区（本地）---git add-->stage(暂存区)--git commit-->master（分支）
+
+管理修改：git diff HEAD --文件名(.后缀)查看工作区和版本库里面最新版本的区别
+		 每当工作区修改一次就要进行一次git add提交到缓存区 修改完成了再git commit
+
+撤销修改：git checkout --file : 1)修改了但是还没有放进暂存区，撤销修改回到原来版本
+2）已经放进暂存区，又作了修改，撤销回到添加暂存区后的版本
+
+当你该乱工作区还添加到暂存区后想要丢弃修改：先git reset HEAD <file> 再 git checkout -- file(这条命令只能消除工作区修改)
+
+删除文件：git rm file + git commit
+		删错了时 （版本库还有的时候）git checkout --file 用版本库版本代替工作区
+
+添加远程仓库：使用git remote add origin 地址 关联，关联后使用git push -u origin master 第一次推送 后面推送使用git push origin master
+
+从远程克隆：git clone 地址 （ssh协议速度最快）
+
+创建与合并分支：查看分支：git branch
+			   创建分支：git branch <name>
+			   切换分支：git checkout <name> / git switch <name>
+			   创建+切换：git checkout -b <name> / git switch -c <name>
+			   合并分支到当前分支：git merge <name>
+			   删除分支：git branch -d <name>
+
+解决冲突：git无法自动合并分支的时候需要我们手动编辑再提交 用git log --graph命令可以查看分支合并图
+
+
+创建标签：git tag <tagname>用于新建一个标签，默认为HEAD，也可以指定一个commit (git taget <name> <commit id>
+
+	git tag -a <tagname> -m "...." 可以指定标签信息
+	git tag 可以查看所有标签（标签不是按时间顺序列出，而是按字母排序的）
+
+操作标签：git push origin <tagname> 可以推送一个本地标签
+		 git push origin --tags 推送全部未推送的本地标签
+		 git tag -d <tagname> 删除一个本地标签
+		 git push origin :refs/tags/<tagname> 删除一个远程标签
