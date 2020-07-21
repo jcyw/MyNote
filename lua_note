@@ -1,0 +1,9 @@
+基本语法： print("hello world!")
+			> print(b)
+			nil
+			> b=10
+			> print(b)
+			10
+			>
+			b = nil
+			print(b)      --> nil
