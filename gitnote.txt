@@ -12,6 +12,7 @@
 		添加到暂存区：git add test.txt
 		提交：git commit -m"说明"
 		关联远程仓库：git remote add origin git@github.com:jcyw/test.git
+		修改远程仓库：git remote set url origin git@github.com:jcyw/test.git
 		推送：git push -u origin master
 
 		如果后面修改test.txt：
@@ -101,7 +102,8 @@ feature分支： 开发一个新的feature，最好新建一个分支；
 
 
 
-创建标签：git tag <tagname>用于新建一个标签，默认为HEAD，也可以指定一个commit (git taget <name> <commit id>
+创建标签：git tag <tagname>用于新建一个标签，默认为HEAD，
+		 也可以指定一个commit (git taget <name> <commit id>)
 
 	git tag -a <tagname> -m "...." 可以指定标签信息
 	git tag 可以查看所有标签（标签不是按时间顺序列出，而是按字母排序的）
