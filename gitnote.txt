@@ -112,3 +112,47 @@ feature分支： 开发一个新的feature，最好新建一个分支；
 		 git push origin --tags 推送全部未推送的本地标签
 		 git tag -d <tagname> 删除一个本地标签
 		 git push origin :refs/tags/<tagname> 删除一个远程标签
+
+
+
+
+
+
+
+
+Review:
+	1):建立远程连接：git remote add origin (+url)
+	   修改远程连接：git remote set url origin (+url)
+	   第一次提交：git push -u origin master 后面提交：git push
+
+	2):时光穿梭：git status : 查看当前仓库状态
+
+
+				git diff file : 查看file文件工作区和暂存区的不同
+				git diff --cached file : 查看file文件暂存区和仓库的不同
+				git diff HEAD file : 查看file文件工作区和仓库的不同（按q退出）
+
+				git checkout --file : 将本地修改清0（撤销工作区修改）
+				git reset --hard HEAD : 回退当远程版本/清空暂存区（清空暂存区后还需要 讲本地清0）【把仓库最新版本转移到暂存区】
+
+				git log : 查看远程提交日志 （按q退出）
+				git log --pretty=oneline : 每个提交日志显示一行
+
+				git reflog : 查看历史命令
+
+
+				git reset --hard (HEAD^^^/commitID) ： 回退版本 
+
+				git rm file 删除文件
+				如果需要提交 ： git commit -m"remove file"
+
+				如果删错了 ： git checkout --file
+
+
+	3):分支管理：git branch : 查看分支
+				git branch <name> : 创建分支
+				git checkout <name>  / git switch <name> ： 切换分支
+				git checkout -b <name>  / git switch -c <name> : 创建并转到该分支
+				git merge <name> : 合并name分支到当前分支
+				git branch -d <name> ： 删除分支
+				git branch -D <name> : 强行删除一个没有合并的分支
