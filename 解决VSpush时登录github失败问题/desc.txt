@@ -1,0 +1,5 @@
+fatal: HttpRequestException encountered解决方法
+Github 禁用了TLS v1.0 and v1.1，必须更新Windows的git凭证管理器，才行。
+点击下载安装 GCMW-1.14.0.exe ，问题就解决了。
+
+url = https://github.com/microsoft/Git-Credential-Manager-for-Windows/releases/tag/v1.14.0
