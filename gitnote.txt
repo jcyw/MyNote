@@ -159,17 +159,23 @@ Review:
 
 
 --------------------------------------------------------------------------------------------------------
-git branch -vv  : 查看本地分支对应远端分支
-git config -list : 查看git的相关设置
-git log --author=username : 查看指定用户的commit
-查看用户名和邮箱地址：
-
-$ git config user.name
-
-$ git config user.email
-
-修改用户名和邮箱地址
-
-$  git config --global user.name  "xxxx"
-
-S  git config --global user.email  "xxxx"
+##  git branch -vv  : 查看本地分支对应远端分支
+##  git config -list : 查看git的相关设置
+##  git log --author=username : 查看指定用户的commit
+##  
+##  查看用户名和邮箱地址：
+##  
+##  $ git config user.name
+##  
+##  $ git config user.email
+##  
+##  修改用户名和邮箱地址
+##  
+##  $  git config --global user.name  "xxxx"
+##  
+##  $  git config --global user.email  "xxxx"
+##  
+##  解决`向github提交代码是老要输入用户名密码`
+##  $  git config --global credential.helper store
+##  	
+##  	修改文件 --->.gitconfig文件
