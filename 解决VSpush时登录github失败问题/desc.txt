@@ -10,4 +10,4 @@ url = https://github.com/microsoft/Git-Credential-Manager-for-Windows/releases/t
     git remote add origin ssh-url
     git branch
     git branch set-upstream-to=origin/master master
-    git pull origin master
+    git pull --set-upstream origin master
