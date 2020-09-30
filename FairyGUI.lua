@@ -1,3 +1,8 @@
+-----------------通用-----------------------------
+    --  sortingOrder: 设置显示层级：panel.SetSortingOrder(1, true);
+--                    UIPanel在屏幕上的显示顺序是由他的sortingOrder属性决定的。sortingOrder越大，显示在越前面（越靠近屏幕）。
+--                    对sortingOrder为100的UIPanel按z进行排序，z值越小，显示在越前面。Stage.inst.SortWorldSpacePanelsByZOrder(100);
+
 -----------------GList-----------------------------
 
 --##Properties
@@ -23,3 +28,5 @@
     --  onTouchBegin
     --  onTouchMove
     --  onTouchEnd
+
+
