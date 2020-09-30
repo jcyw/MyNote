@@ -9,5 +9,5 @@ url = https://github.com/microsoft/Git-Credential-Manager-for-Windows/releases/t
     git remote rm origin
     git remote add origin ssh-url
     git branch
-    git branch set-upstream-to=origin/master master
-    git pull --set-upstream origin master
+    git branch --set-upstream-to=origin/master master
+    或者git pull --set-upstream origin master
