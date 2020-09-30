@@ -30,3 +30,10 @@
     --  onTouchEnd
 
 
+-----------------GObject-----------------------------
+
+--##Method
+    --  GObject.TweenMoveX(float endValue，float duration)
+        --param[结束位置，播完动画所需时间]
+    --  GObject.TweenMoveY(float endValue，float duration)
+
