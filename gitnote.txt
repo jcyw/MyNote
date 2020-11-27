@@ -180,5 +180,6 @@ Review:
 ##  $  git config --global credential.helper store
 ##  	
 ##  	修改文件 --->.gitconfig文件
+##	git remote -a 
 
 *************************************************************************************

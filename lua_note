@@ -7,3 +7,267 @@
 			>
 			b = nil
 			print(b)      --> nil
+
+
+-------------------------------------table insert remove concat sort-------------------------------------------
+insert 和 remove 只能用于数组元素的插入和移出， 进行插入和移出时，会将后面的元素对齐起来。
+
+local t = {1,2,3,3,5,3,6} 
+
+        for i,v in ipairs(t) do 
+
+            if v == 3 then 
+
+                table.remove(t,i) 
+
+            end 
+
+        end 
+
+        -- 错误，第四个 3 没有被移除，ipairs 内部会维护一个变量记录遍历的位置，remove 掉第三个数字 3 之后，ipairs 下一个返回的值是 5 而不是 3 
+
+        
+
+        local t = {1,2,3,3,5,3,6} 
+
+        for i=1, #t do 
+
+            if t[i] == 3 then 
+
+                table.remove(t,i) 
+
+                i = i-1 
+
+            end 
+
+        end 
+
+        -- 错误，i=i-1 这段代码没有用，i 的值始终是从 1 到 #t，for 循环里修改 i 的值不起作用 
+
+        
+
+        local t = {1,2,3,3,5,3,6} 
+
+        for i=#t, 1, -1 do 
+
+            if t[i] == 3 then 
+
+                table.remove(t,i) 
+
+            end 
+
+        end 
+
+        -- 正确，从后往前遍历 
+
+        
+
+        local t = {1,2,3,3,5,3,6} 
+
+        local i = 1 
+
+        while t[i] do 
+
+            if t[i] == 3 then 
+
+                table.remove(t,i) 
+
+            else 
+
+                i = i+1 
+
+            end 
+
+        end 
+
+        -- 正确，自己控制 i 的值是否增加
+--------------------------------------------------------------------------------------------------------------
+concat 可以将 table 的数组部分拼接成一个字符串，中间用 seq 分隔。 
+
+local beginTime = os.clock() 
+
+        local str = "" 
+
+        for i=1, 30000 do 
+
+            str = str .. i 
+
+        end 
+
+        local endTime = os.clock() 
+
+        print(endTime - beginTime) 
+
+        -- 消耗 0.613 秒，产生了 30000 个字符串拷贝，但只有最后一个是有用的
+        local beginTime = os.clock() 
+
+        local t = {} 
+
+        for i=1, 30000 do 
+
+            t[i] = i 
+
+        end 
+
+        local str = table.concat(t, "") 
+
+        local endTime = os.clock() 
+
+        print(endTime - beginTime) 
+
+        -- 消耗 0.024 秒，利用 concat，一次性把字符串拼接出来，只产生了一个字符串拷贝
+--eg:table.concat({"X",1},nil)  ---X1
+--------------------------------------------------------------------------------------------------------------
+sort 可以将 table 数组部分的元素进行排序，需要提供 comp 函数，comp(a, b) 如果 a 应该排到 b 前面，则 comp 要返回 true 。   
+注意，对于 a==b 的情况，一定要返回 false : 
+
+local function comp(a,b) 
+
+            return a <= b 
+
+        end 
+
+        table.sort(t,comp) 
+
+        -- 错误，可能出现异常：attempt to compare number with nil 
+
+        
+
+        local function comp(a,b) 
+
+            if a == nil or b == nil then 
+
+                return false 
+
+            end 
+
+            return a <= b 
+
+        end 
+
+        table.sort(t,comp) 
+
+        -- 错误，可能出现异常：invalid order function for sorting 
+
+        -- 也可能不报这个异常，但结果是错误的； 
+
+    之所以 a==b 返回true 会引发这些问题，是因为 table.sort 在实现快速排序时没有做边界检测： 
+
+        for (;;) { 
+
+          while (lua_rawgeti(L, 1, ++i), sort_comp(L, -1, -2)) {  // 未检测边界, i 会一直增加 
+
+            if (i>=u) luaL_error(L, "invalid order function for sorting"); 
+
+            lua_pop(L, 1); 
+
+          } 
+
+          while (lua_rawgeti(L, 1, --j), sort_comp(L, -3, -1)) {  // 未检测边界, j 会一直减少 
+
+            if (j<=l) luaL_error(L, "invalid order function for sorting"); 
+
+            lua_pop(L, 1); 
+
+          } 
+
+          if (j<i) { 
+
+            lua_pop(L, 3); 
+
+            break; 
+
+          } 
+
+          set2(L, i, j); 
+
+        }
+
+----------------------------下面为正确的写法
+local function comp(a,b) 
+
+            if a == nil or b == nil or a == b then 
+
+                return false 
+
+            end 
+
+            return a < b 
+
+        end 
+
+        table.sort(t,comp)
+意思就是，在a == b 时，不进行交换就可以了。交换的话，就会导致不稳定。
+--------------------------------------------------------------------------------------------------------------
+table.concat(table, sep,  start, end) 
+
+concat是concatenate(连锁, 连接)的缩写. table.concat()函数列出参数中指定table的数组部分从start位置到end位置的所有元素, 
+元素间以指定的分隔符(sep)隔开。除了table外, 其他的参数都不是必须的, 分隔符的默认值是空字符, start的默认值是1, end的默认值是数组部分的总长. 
+
+看到网上的一些例子方便大家更好的理解：
+
+do
+    --> table.concat  连接 函数
+
+    tab = {"a", "c", "d", "b"}
+
+    --(1)
+    -- 一个参数，参数为 表(tab)，作用为连接 tab 
+    -- 中所有的 value
+
+    print(table.concat(tab))   
+    --> 输出结果： acdb
+
+    --(2)
+    -- 两个参数，参数一：表(tab)，参数二：分隔符(nil)，
+    -- 作用为连接tab中所有的value，value 间以 nil 隔开
+
+    print(table.concat(tab, nil))  
+    --> 输出结果： acdb
+
+    --(3)
+    -- 三个参数，参数一：表(tab)，参数二：分隔符 (" @@ ")，
+    -- 参数三：起始位置(2)，作用为连接tab中所有的value，
+    -- value 间以 " @@ " 隔开, 从 tab 的第二个value开始连接，
+    -- 到 tab 的 end 
+
+    print(table.concat(tab, " @@ ", 2))  
+    --> 输出结果： c @@ d @@ b
+
+    --(4)
+    -- 四个参数，参数一：表(tab)，参数二：分隔符 (" - ")，
+    -- 参数三：起始位置(2)，参数四：结束连接位置，作用为连
+    -- 接tab中所有的value，value 间以 " - " 隔开, 从 tab 
+    -- 的第二个value  开始连接，到 tab 的 第 3 个 value结束连接
+
+    print( table.concat(tab, " - ", 2, 3))  
+    --> 输出结果： c - d
+
+
+    print(table.concat(tab, " ## \n", 2, 4))   
+    --> 输出结果：
+    --> c ##
+    --> d ##
+    --> b
+
+
+    --(5)
+    for i,v in ipairs(tab) do
+        print(i,v)
+    end
+
+    --> 输出结果：
+    -- 1      a
+    -- 2      c
+    -- 3      d
+    -- 4      b
+
+    -- 说明 table.concat 不会改变 原始 table 即(tab) 的结构
+end
+
+ 
+
+为什么要使用table.concat去连接字符呢，使用一个for循环完全可以胜任？这是因为使用for循环会花费更多的时间
+
+table.concat，concat函数对字符串连接进行了优化，即使进行大量的连接操作，也不会消耗多少时间。
+--------------------------------------------------------------------------------------------------------------
