@@ -37,3 +37,16 @@
             --param[结束位置，播完动画所需时间]
         --  GObject.TweenMoveY(float endValue，float duration)
 
+
+-----------------GTextField----------------------------
+    
+    --##Property
+        -- GTextField.autoSize  文本自动大小
+            --AutoSizeType Both-1   宽度和高度
+            --             Height-2 高度
+            --             None-0   无
+            --             Shrink-3 自动收缩
+
+
+    --[如果想text可以滑动，就把text做成组件]
+
