@@ -28,6 +28,8 @@
         --  onTouchBegin
         --  onTouchMove
         --  onTouchEnd
+    --##Method
+        --  self.list:ResizeToFit(self.list.numItems) :列表会跟随子项目的多少调整大小
 
 
 -----------------GObject-----------------------------
