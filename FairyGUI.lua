@@ -28,6 +28,8 @@
         --  onTouchBegin
         --  onTouchMove
         --  onTouchEnd
+        --  ScrollPane.scrollStep: 当调用ScrollPane.scrollUp/Down/Left/Right时，或者点击滚动条的上下箭头时，滑动的距离。 鼠标滚轮触发一次滚动的距离设定为defaultScrollStep*2
+        --  ScrollPane.touchEffect: 是否允许拖拽内容区域进行滚动。
     --##Method
         --  self.list:ResizeToFit(self.list.numItems) :列表会跟随子项目的多少调整大小
 
