@@ -54,3 +54,15 @@
 
     --[如果想text可以滑动，就把text做成组件]
 
+--------------------------------GoWrapper-------------------------------------
+    --GoWrapper是一个将普通游戏对象包装到UI显示列表中的类
+    ------Constructors
+        --GoWrapper(GameObject) 
+
+---------------------------------GGraph----------------------------------------
+    -------Methond
+        --SetNativeObject(DisplayObject obj)
+            --设置内容为一个原生对象，这个图形对象相当于一个占位的用途
+            --Patameters : obj --<type> = FairyGUI.DisplayObject(原生对象)
+            --eg:   tempwrap = GoWrapper(obj)
+            --      ggraph:SetNativeObject(tempwrap)
