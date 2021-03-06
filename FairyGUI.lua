@@ -59,6 +59,48 @@
     ------Constructors
         --GoWrapper(GameObject) 
 
+    ------Property
+        --GoWrapper.wrapTarget
+        --设置包装对象。注意如果原来有包装对象，设置新的包装对象后，原来的包装对象只会被删除引用，但不会被销毁。
+        --对象包含的所有材质不会被复制，如果材质已经是公用的，这可能影响到其他对象。如果希望自动复制，
+        --改为使用SetWrapTarget(target,true)设置
+
+    ------SetWrapTarget(GameObject target,bool cloneMaterial)
+        --设置包装对象。注意如果原来有包装对象，设置新的包装对象后，原来的包装对象只会删除引用，但不会 被销毁
+        --Parameters
+            --cloneMaterial<bool>如果true,则复制材质，否则直接使用shareMaterial
+
+
+--********************项目例子（英雄spine）**************************
+funciton RecruitResult:CheckDeleteSpine()
+    if mObj then
+        su.GameObject.Destroy(mObj)
+        mObj = nil
+    end
+end
+local mWrap
+funciton RecruitResult:LoadSpine(id,targetImg,action)
+    self:CheckDeleteSpine()
+    local resName = action.."_Anim"
+    local bundleName = string.format("Spine/%s",action)
+    su.DynamicRes.GetPrefab(bundleName,resName,function(spineObj)
+        local obj = su.Instantiate(spineObj)
+        mObj = obj
+        local conf = su.tbMgr.GetItem("HeroType",id)
+        local position = conf.position
+        local size = conf.size
+        obj.transform.localPosition = CVector3(position[1],position[2],1000)
+        obj.transform.localScale = CVector3(size[1],size[2],1)
+        obj.transform.localEulerAngles = CVector3.zero
+        if mObj == nil then
+            mWrap = su.GoWrapper(mObj)
+            targetImg:SetNativeObject(mWrap)
+        else
+            mWrap.wrapTarget = mObj
+        end
+    end)
+end
+--******************************************************************
 ---------------------------------GGraph----------------------------------------
     -------Methond
         --SetNativeObject(DisplayObject obj)
