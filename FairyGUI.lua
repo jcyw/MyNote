@@ -108,3 +108,8 @@ end
             --Patameters : obj --<type> = FairyGUI.DisplayObject(原生对象)
             --eg:   tempwrap = GoWrapper(obj)
             --      ggraph:SetNativeObject(tempwrap)
+
+
+
+
+000000000000000000000000000000000000000000
