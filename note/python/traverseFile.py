@@ -20,7 +20,7 @@ def walkFile(file):
             #     print(f)
 
             # if re.match(r'^.*?\.(txt)+$',f):
-            #     print(f)
+            #     print(f)  <==> print(os.path.basename)[文件名全称包括后缀]
             arrFiles.append(f)
             arrPath.append(os.path.join(root, f))
 
