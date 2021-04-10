@@ -61,3 +61,22 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# os.path.abspath(path) #返回绝对路径（包含文件名的全路径）
+
+# os.path.basename(path) —— 去掉目录路径获取带后缀的文件名
+
+# os.path.dirname(path) —— 去掉文件名获取目录
+
+# os.path.split(path) —— 将全路径分解为(文件夹,文件名)的元组
+
+# os.path.splitext(path)  #分割全路径，返回路径名和文件扩展名的元组
+
+# os.path.join()  #路径拼接
+
+# os.path.isdir()  #用于判断对象是否为一个全路径
+
+# os.path.isfile(path)  #判断文件是否存在？如果path是一个存在的文件，返回True。否则返回False。
+
+# os.path.isdir(path)  #判断目录是否存在？如果path是一个存在的目录，则返回True。否则返回False。
