@@ -2,3 +2,5 @@
 ctrl + shift + 1(num) --添加标签/查看指定标签
 alt + b --查看所有标签
 如果rider进入断点不能进入下一步，就 file --> setting --> Language & Frameworks --> EmmyLua --> Lua additional sources root(就在这里添加lua的脚本目录)
+
+ctrl + alt + L --格式化代码
