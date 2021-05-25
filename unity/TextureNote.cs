@@ -23,9 +23,9 @@
 
 // 属性：	功能：
 // Sprite Mode	指定从图像中提取精灵图形的方式。此选项的默认设置为 Single。
-// Single	按原样使用精灵图像。您可以在 Sprite Editor 中剪辑和编辑图像以进一步优化图像，但是 Unity 会将从导入纹理生成的精灵视为单个资源。
-// Multiple	如果您的图像在同一图像中有多个元素，请选择此值。然后，可以在 Sprite Editor 中定义元素的位置，以便 Unity 知道如何将图像拆分为不同的子资源。例如，可从具有多个姿势的单个图集创建动画帧，从单个瓦片图集创建瓦片，或创建角色的不同部位。
-// Polygon	选择此值可根据 Sprite Editor 的 Sprite Custom Outline 中定义的网格来剪辑精灵纹理。
+//  Single	按原样使用精灵图像。您可以在 Sprite Editor 中剪辑和编辑图像以进一步优化图像，但是 Unity 会将从导入纹理生成的精灵视为单个资源。
+//  Multiple	如果您的图像在同一图像中有多个元素，请选择此值。然后，可以在 Sprite Editor 中定义元素的位置，以便 Unity 知道如何将图像拆分为不同的子资源。例如，可从具有多个姿势的单个图集创建动画帧，从单个瓦片图集创建瓦片，或创建角色的不同部位。
+//  Polygon	选择此值可根据 Sprite Editor 的 Sprite Custom Outline 中定义的网格来剪辑精灵纹理。
 // Packing Tag	（按名称）指定要将此纹理打包到的精灵图集。仅当项目中已启用 Legacy Sprite Packer 时，此属性才可见。
 // Pixels Per Unity	精灵图像中对应于世界空间一个距离单位的宽度/高度像素数。
 // Mesh Type	定义您希望 Unity 为精灵生成的网格类型。此选项的默认值为 Tight。

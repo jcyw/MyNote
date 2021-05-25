@@ -146,3 +146,28 @@
 // rotation	新对象的方向。
 // parent	将指定给新对象的父对象。
 // instantiateInWorldSpace	分配父对象时，传递 true 可直接在世界空间中定位新对象。传递 false 可相对于其新父项来设置对象的位置。
+
+//判斷用戶設備
+// Application.platform == RuntimePlatform.Android
+
+
+// RuntimePlatform 屬性：
+    // OSXEditor	In the Unity editor on macOS.
+    // OSXPlayer	In the player on macOS.
+    // WindowsPlayer	In the player on Windows.
+    // WindowsEditor	In the Unity editor on Windows.
+    // IPhonePlayer	In the player on the iPhone.
+    // Android	In the player on Android devices.
+    // LinuxPlayer	In the player on Linux.
+    // LinuxEditor	In the Unity editor on Linux.
+    // WebGLPlayer	In the player on WebGL
+    // WSAPlayerX86	In the player on Windows Store Apps when CPU architecture is X86.
+    // WSAPlayerX64	In the player on Windows Store Apps when CPU architecture is X64.
+    // WSAPlayerARM	In the player on Windows Store Apps when CPU architecture is ARM.
+    // PS4	In the player on the Playstation 4.
+    // XboxOne	In the player on Xbox One.
+    // tvOS	In the player on the Apple's tvOS.
+    // Switch	In the player on Nintendo Switch.
+    // Stadia	In the player on Stadia.
+    // CloudRendering	In the player on CloudRendering.
+    // PS5	In the player on the Playstation 5.
