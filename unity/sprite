@@ -1,0 +1,7 @@
+设置sprite
+--以项目为例
+testPrefab = ObjectManager:CreateGetObj(prefabPath)
+local testSp = ObjectManager:GetComponent(testPrefab,"SpriteRenderer)
+
+--atlas/nestRes图集路径，select：图片名
+testSp.sprite = ResMgr.Instance:GetSprite("atlas/nestRes","select")
