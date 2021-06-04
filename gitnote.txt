@@ -207,3 +207,10 @@ git branch --set-upstream-to=origin/newbranch
 	git push origin :老的分支名	（删除老的分支）
 	git push --set-upstream origin 新的分支名 （推新的分支设置管理）
 ***************************************************************************************
+github 下拉報錯處理
+remote: Total 8838 (delta 129), reused 117 (delta 68), pack-reused 8633
+
+这是因为服务器的SSL证书没有经过第三方机构的签署，所以才报错
+解决办法:
+
+git config --global http.sslVerify "false" 然後重新拉一下就好了
