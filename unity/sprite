@@ -5,3 +5,24 @@ local testSp = ObjectManager:GetComponent(testPrefab,"SpriteRenderer)
 
 --atlas/nestRes图集路径，select：图片名
 testSp.sprite = ResMgr.Instance:GetSprite("atlas/nestRes","select")
+
+
+变量
+    associatedAlphaSplitTexture	返回包含源纹理的 Alpha 通道的纹理。对于源代码中具有 Alpha 通道、需要使用 ETC1 等技术进行压缩的精灵，Unity 在底层为其生成该纹理。如果源精灵没有关联的 Alpha 纹理，则返回 NULL。如果精灵尚未设置为使用 ETC1 压缩，就会出现这种情况。
+    border	返回精灵的边框大小。
+    bounds	精灵的 Bounds，由精灵的中心和范围（采用世界空间单位）指定。
+    packed	如果该精灵打包在图集中，则返回 true。
+    packingMode	如果精灵已打包（请参阅 Sprite.packed），则返回其 SpritePackingMode。
+    packingRotation	如果精灵已打包（请参阅 Sprite.packed），则返回其 SpritePackingRotation。
+    pivot	精灵的中心点在原始纹理的 Rect 中的位置（以像素为单位指定）。
+    pixelsPerUnit	对应世界空间中一个单位的精灵中的像素数。（只读）
+    rect	精灵在原始纹理中的位置（以像素为单位指定）。
+    spriteAtlasTextureScale	精灵使用的纹理的可变比例。这对于检查精灵何时使用变体 SpriteAtlas 很有用。
+
+    texture	获取对使用的纹理的引用。如果已打包，则指向图集；如果未打包，则指向源精灵。
+
+    textureRect	获取该精灵在其纹理上使用的矩形。如果该精灵紧密打包在图集中，则引发异常。
+    textureRectOffset	获取该精灵在其纹理上使用的矩形到原始精灵边界的偏移。如果精灵网格类型为 FullRect，则偏移为零。
+    triangles	返回包含精灵网格三角形的数组的副本。
+    uv	精灵网格的基础纹理坐标。
+    vertices	返回包含精灵网格顶点位置的数组的副本。
