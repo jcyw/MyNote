@@ -222,8 +222,9 @@ git config --global http.sslVerify "false" 然後重新拉一下就好了
 git cherry-pick 60d948e3d2
 
 
+-----如果回退操作遇见 
+Unstaged changes after reset:
+M       gitnote.txt
 
-test 1111
-test 4444
-
-test 3333
+解决办法 : git add .
+		  git reset --hard
