@@ -214,3 +214,9 @@ remote: Total 8838 (delta 129), reused 117 (delta 68), pack-reused 8633
 解决办法:
 
 git config --global http.sslVerify "false" 然後重新拉一下就好了
+
+
+
+------------------------------------------------------------------------------------------
+合并其他分支一条记录到本分支
+git cherry-pick 60d948e3d2
