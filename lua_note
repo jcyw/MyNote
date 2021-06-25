@@ -274,3 +274,6 @@ table.concat，concat函数对字符串连接进行了优化，即使进行大�
 
 a. name 等价于 a["name ＂］
 使用 pairs来实现仅遍历非 元素
+
+
+test 2------
