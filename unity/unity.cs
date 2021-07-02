@@ -171,3 +171,11 @@
     // Stadia	In the player on Stadia.
     // CloudRendering	In the player on CloudRendering.
     // PS5	In the player on the Playstation 5.
+
+
+    //UNITY 默认DX改成OPENGL   ---》unity图标——右键属性——目标 后面加 空格-force-gles
+
+    //Unity安卓平台shader平台丢失
+    // Unity的工程切换到Android平台后，运行游戏出现shader丢失
+
+    // 解决办法：在Unity桌面图标的快捷方式后添加 -force-gles20
