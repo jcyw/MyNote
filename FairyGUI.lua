@@ -33,6 +33,24 @@
     --##Method
         --  self.list:ResizeToFit(self.list.numItems) :列表会跟随子项目的多少调整大小
 
+    --##Method滚动列表以使具有特定索引的项目可见。
+--         public  void  ScrollToView (
+-- 	            int  index ,
+-- 	            bool  ani ,
+-- 	            bool  setFirst 
+--          )
+--          参数：
+--              index
+--                  Type： System.Int32
+--                  Item index
+--              ani
+--                  Type: System.Boolean
+--                  True 平滑滚动，否则立即滚动。
+--              setFirst
+--                  Type: System.Boolean
+--                  如果为 true，则滚动使目标位于顶部/左侧；如果为 false，则滚动以使目标处于视野中的任何位置。
+--lua 调用 self.list:ScrollToView()
+
 
 -----------------GObject-----------------------------
 
