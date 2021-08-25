@@ -70,7 +70,7 @@
             --             None-0   无
             --             Shrink-3 自动收缩
 
-
+        --  GTextInput.promptText   输入文本默认文本（自身支持ubb）
     --[如果想text可以滑动，就把text做成组件]
 
 --------------------------------GoWrapper-------------------------------------
@@ -91,34 +91,34 @@
 
 
 --********************项目例子（英雄spine）**************************
-funciton RecruitResult:CheckDeleteSpine()
-    if mObj then
-        su.GameObject.Destroy(mObj)
-        mObj = nil
-    end
-end
-local mWrap
-funciton RecruitResult:LoadSpine(id,targetImg,action)
-    self:CheckDeleteSpine()
-    local resName = action.."_Anim"
-    local bundleName = string.format("Spine/%s",action)
-    su.DynamicRes.GetPrefab(bundleName,resName,function(spineObj)
-        local obj = su.Instantiate(spineObj)
-        mObj = obj
-        local conf = su.tbMgr.GetItem("HeroType",id)
-        local position = conf.position
-        local size = conf.size
-        obj.transform.localPosition = CVector3(position[1],position[2],1000)
-        obj.transform.localScale = CVector3(size[1],size[2],1)
-        obj.transform.localEulerAngles = CVector3.zero
-        if mObj == nil then
-            mWrap = su.GoWrapper(mObj)
-            targetImg:SetNativeObject(mWrap)
-        else
-            mWrap.wrapTarget = mObj
-        end
-    end)
-end
+-- funciton RecruitResult:CheckDeleteSpine()
+--     if mObj then
+--         su.GameObject.Destroy(mObj)
+--         mObj = nil
+--     end
+-- end
+-- local mWrap
+-- funciton RecruitResult:LoadSpine(id,targetImg,action)
+--     self:CheckDeleteSpine()
+--     local resName = action.."_Anim"
+--     local bundleName = string.format("Spine/%s",action)
+--     su.DynamicRes.GetPrefab(bundleName,resName,function(spineObj)
+--         local obj = su.Instantiate(spineObj)
+--         mObj = obj
+--         local conf = su.tbMgr.GetItem("HeroType",id)
+--         local position = conf.position
+--         local size = conf.size
+--         obj.transform.localPosition = CVector3(position[1],position[2],1000)
+--         obj.transform.localScale = CVector3(size[1],size[2],1)
+--         obj.transform.localEulerAngles = CVector3.zero
+--         if mObj == nil then
+--             mWrap = su.GoWrapper(mObj)
+--             targetImg:SetNativeObject(mWrap)
+--         else
+--             mWrap.wrapTarget = mObj
+--         end
+--     end)
+-- end
 --******************************************************************
 ---------------------------------GGraph----------------------------------------
     -------Methond
