@@ -220,3 +220,9 @@
 
     //来源：
     //https://blog.csdn.net/m0_46184795/article/details/108266234?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EOPENSEARCH%7Edefault-12.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EOPENSEARCH%7Edefault-12.control
+
+    //网友优化建议：
+    //     分享一点我们自己在做性能优化时的小经验：在Unity Editor模式下运行，有部分Overhead是由运行时的场景编辑器导致的，采样的时候可以先把“Scene”关掉。
+    //     用Profiler采样时，首先重点关注CPU占用率高的方法，并且优先打击关注内存分配“GC Alloc”，
+    //     每帧超过100B的内存分配都需要解决，否则这样的的内存分配累积后就会引起GC，很容易引起卡顿
+    //     字符串串接使用stringbuilder不使用+，频繁foreach最好用for代替，缓存已经取到的componet.
