@@ -228,3 +228,7 @@ M       gitnote.txt
 
 解决办法 : git add .
 		  git reset --hard
+
+
+--git show : 查看提交详情
+--git show cimmitId : 查看某条提交纪律详情
