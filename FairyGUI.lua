@@ -157,3 +157,10 @@
 
 -- GProgressBar.TweenValue：动态改变进度值。
 ----------------------------------------------------------------------------------
+
+-------------------------------------GComponet------------------------------------
+--GComponet : GObject
+--GObject 成员变量 DisplayObject displayObject
+--DisplayObject 成员变量 GameObject gameObject
+--设置组件位置 : self.dispalyObject.gameObject.transform.position
+----------------------------------------------------------------------------------

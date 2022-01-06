@@ -1,4 +1,7 @@
 开启禅模式  Ctrl+K 松了再按Z
 关闭禅模式 Esc连击
 
----test
+设置页面标题大小：settings.json : window.zoomLevel
+
+
+实现vs code中代码格式化快捷键:【Shift】+【Alt】+F
