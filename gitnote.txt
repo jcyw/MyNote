@@ -232,3 +232,11 @@ M       gitnote.txt
 
 --git show : 查看提交详情
 --git show cimmitId : 查看某条提交纪律详情
+
+
+1. 忽略本地修改，强制拉取远程到本地
+git fetch --all
+
+git reset --hard origin/dev
+
+git pull
