@@ -226,3 +226,6 @@
     //     用Profiler采样时，首先重点关注CPU占用率高的方法，并且优先打击关注内存分配“GC Alloc”，
     //     每帧超过100B的内存分配都需要解决，否则这样的的内存分配累积后就会引起GC，很容易引起卡顿
     //     字符串串接使用stringbuilder不使用+，频繁foreach最好用for代替，缓存已经取到的componet.
+
+
+    //Application.dataPath : 绝对路径到Assets

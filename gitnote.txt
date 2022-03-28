@@ -191,7 +191,7 @@ Review:
 
 ************************************新建分支*******************************************
 git checkout -b newbranch
-git push origin newbranch:newbranch
+git push origin newbranch:newbranch(前面的是本地分支名，后面的是远程分支名)
 git branch --set-upstream-to=origin/newbranch
 ***************************************************************************************
 
@@ -246,3 +246,11 @@ git命令出现fatal: Unable to create 'xxx/.git/index:File exists.问题
 或者直接在命令行输入 rm -f .git/index.lock
 
 -------------------------------------------------------------------------------------------
+将远程主机 origin 的 master 分支拉取过来，与本地的 brantest 分支合并。
+
+git pull origin master:brantest
+如果远程分支是与当前分支合并，则冒号后面的部分可以省略。
+
+git pull origin master
+
+git push origin --delete temp(远端分支名)  -- 删除远端分支
