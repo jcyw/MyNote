@@ -1,0 +1,74 @@
+賽季兵蟻
+Season Soldier Ants
+
+1:統領可以在賽季中免費獲得賽季兵蟻的幫助。
+2:賽季兵蟻擁有強大的能力，所以它們不會在賽季中陣亡，只需要在賽季兵蟻棲息地中治療，即可使它們重返戰場。
+3:當賽季結束後，賽季兵蟻將留在海島，不會隨統領返回原區域。
+4:賽季兵蟻將不會計入最強區域戰和蟻群行動等孵化兵蟻任務中。
+1:During the Season, you can get help from Season Soldier Ants for free.
+2:Season Soldier Ants are very powerful so they will not die in the Season. Once treated in theSeason Troop Camp, they can rejoin the battle.
+3:After the Season ends, they will stay on the island instead of returning to the original Zone with you.
+4:Season Soldier Ants will not be counted in Hatch Soldier Ant tasks of the Strongest Warzone, Colony Action and so on.
+
+聯盟通知:
+Alliance notification:
+
+聯盟堡壘 Alliance Blockhouse
+
+1 : 聯盟堡壘為聯盟提供初始聯盟領土和安全區。
+2 : 只有本聯盟的成員才能遷巢到聯盟領土內。
+3 : 處於安全區內的統領，不會受到其他統領的入侵，也無法發起戰爭行為。
+4 : 聯盟堡壘無法被攻擊。
+1 : Alliance Blockhouse provides initial Alliance Territory and Safe Area.
+2 : Only Members of current Alliance can teleport to the Alliance Territory.
+3 : The Ruler in Safe Area will not be attacked by other Rulers nor initial attack towards other anthills.
+4 : Alliance Blockhouse cannot be attacked.
+
+聯盟通知:
+Alliance notification:
+
+聯盟哨塔 Alliance Tower
+
+1 : 聯盟R3及以上成員可通過消耗黏土建造聯盟哨塔。
+2 : 聯盟哨塔可以擴張聯盟領土，建造時必須與現有聯盟領土相連。
+3 : 只有本聯盟成員可遷巢到聯盟領土內。
+4 : 統領可通過駐紮在敵方聯盟哨塔內，持續破壞其耐久值。當哨塔耐久值為0時，哨塔將被摧毀，提供的聯盟領地將消失。
+1 : Alliance R3 or above ranking members can consume Clay to build up Alliance Tower.
+2 : Alliance Tower can expand Alliance Territory, but it need to be connected with current Alliance's Territory when building it.
+3 : Only your Alliance members are allowed to teleport to your Alliance Territory.
+4 : You may constantly destroy the durability of enemy's Alliance Tower by stationing troops in it. When the durability of enemy's Alliance Tower reached 0, the provided Territory by it will disappear.
+
+聯盟通知:
+Alliance notification:
+
+聯盟領土 Alliance Territory
+
+1 : 賽季中，只有本聯盟成員可遷巢到聯盟領土內。
+2 : 聯盟領土中的野外生物和資源點將不會有守軍強度增幅。
+3 : 聯盟成員只能入侵與本聯盟領土相連的據點。
+1 : During Season, can your own Alliance's member teleport to the Alliance Territory.
+2 : There's no stationed troops difficulty bonus for the wild creatures and resource nodes in Alliance Territory.
+3 : Alliance members can only attack the Fortress connecting to their Alliance Territory.
+
+聯盟通知:
+Alliance notification:
+
+黏土 Clay
+
+1 : 賽季中，建造聯盟哨塔需要消耗一定量的黏土。
+2 : 聯盟成員通過完成每日任務，將為聯盟增加黏土。
+1 : During Season, building up Alliance Tower will consume some Clay. 
+2 : Alliance members can add Clay to Alliance by completing daily tasks.
+
+聯盟通知:
+Alliance notification:
+
+聯盟聲望 Alliance Reputation
+
+1 : 聯盟成員的聲望排名，將影響通過聯盟佔領據點獲得的賽季兵蟻數量。聲望排名越高，增幅越大。
+2 : 聲望來源：參與建造完成本聯盟的聯盟哨塔、摧毀其他聯盟的聯盟哨塔、擊敗據點守軍、破壞據點耐久值、在據點內擊敗其他聯盟統領兵蟻。
+1 : eputation Rankings of Alliance members will affect the number of Season Soldier Ants gained from occupied Fortress of Alliance. The higher the Reputation Rankings, the greater the increase.
+2 : eputation Origins: participate in the construction of Alliance Towers, destroy the Alliance Towers of other Alliances, defeat Stationed Troops in the Fortress, destroy Durability of the Fortress, and defeat soldier ants of Rulers from other Alliances in Fortress.
+
+
+
