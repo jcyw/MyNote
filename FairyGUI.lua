@@ -165,3 +165,5 @@
 --DisplayObject 成员变量 GameObject gameObject
 --设置组件位置 : self.dispalyObject.gameObject.transform.position
 ----------------------------------------------------------------------------------
+
+-------
