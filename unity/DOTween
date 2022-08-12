@@ -1,6 +1,8 @@
+using System;
 DoTween : http://dotween.demigiant.com/documentation.php?api=Path%20tween%20%E2%9E%A8%20SetOptions
 
 DOPath(Vector3[] waypoints, float durarion, PathType pathType = Linear, PathMode pathMode = Ful3D, int resolution = 10, Color gizmoColor = null)
 
 eg:
+    Object.trans.DOKill(complete)
     obj.trans.DOPath({[1] = {x= 1, y = 1, z = 1}, [1] = {x= 1, y = 1, z = 1}, [1] = {x= 1, y = 1, z = 1}}, 5, CS.DG.Tweening.pathType.Catmullrom).SetEase(Ease.Linear).OnComplete(cb).SetOptions(false).SetLookAt({x= 0, y = 0, z = 0}).SetLoops(1)
