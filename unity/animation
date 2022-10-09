@@ -1,0 +1,12 @@
+// Animator.Play
+public void Play (string stateName, int layer= -1, float normalizedTime= float.NegativeInfinity);
+public void Play (int stateNameHash, int layer= -1, float normalizedTime= float.NegativeInfinity);
+// 参数
+// stateName	状态名称。
+// stateNameHash	状态哈希名称。如果 stateNameHash 为 0，则会更改当前状态时间。
+// layer	层的索引。如果 layer 为 -1，则播放第一个具有给定状态名称或哈希的状态。
+// normalizedTime	介于零到一之间的时间偏移。
+
+// 骨骼
+// local anim = obj:GetComponent<SkeletonAnimation>
+// anim.AnimationState:GetCurrent(0).AnimationStart = 1 //设置开始时间
