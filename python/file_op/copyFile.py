@@ -45,7 +45,7 @@ def scaner_file (url, fileName):
                 if path.isfile(real_url) and f==fileName:
                         print(f)
                         print(path.abspath(real_url))
-
+                        #可以在这里直接调用update_file
                         # 如果是文件，则以绝度路径的方式输出
                 elif path.isdir(real_url):
                 #如果是目录，则是地柜调研自定义函数 scaner_file (url)进行多次【递归】
