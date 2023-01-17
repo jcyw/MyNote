@@ -28,7 +28,6 @@ class Application(tk.Frame):
 def SetAlarm(time_str):
     set_hour = int(time_str.split(':')[0])
     set_mint = int(time_str.split(':')[1])
-    window_poped = False
     while True:
         t = time.localtime()
         fmt = "%H %M"
@@ -37,9 +36,10 @@ def SetAlarm(time_str):
         hour = int(now[0])
         mint = int(now[1])
         
-        if hour == set_hour and mint == set_mint:
-            if not window_poped: # if not poped before then pop a window
-                window_poped = True
+        if hour != 13 and hour >= set_hour and mint == set_mint:
+            if set_hour < 19: # if not poped before then pop a window
+                print(str(hour)+"点啦！ 请喝水！！！！！")
+                set_hour = hour + 1
                 root = tk.Tk()
                 root.wm_attributes('-topmost',1)
                 root["background"] = "blue"
@@ -47,10 +47,9 @@ def SetAlarm(time_str):
                 app = Application(master=root)
                 app.mainloop()
             else: # window poped before then cancel the alarm this time
-                continue
+                break
         else:
-            window_poped = False
-            
+            set_hour = set_hour 
             
 if __name__ == '__main__':
-    SetAlarm('15:33')
+    SetAlarm('10:08')
