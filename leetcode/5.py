@@ -32,7 +32,37 @@
 # 来源：力扣（LjeetCode）
 # 链接：https://leetcode.cn/problems/minimum-amount-of-time-to-fill-cups
 # 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-arr = [5,4,4]
-times = 0
-def GetReduceTimes(a, b, c):
-    print (a)
+arr = [1,4,2]
+def GetOpTime():
+    times = 0
+    while True:
+        index1 , index2 = GetIndex()
+        print(index1 , index2)
+        if index1 + index2 == -2:
+            print('break')
+            break
+        times = times + 1
+        if index1 > -1:
+            arr[index1] = arr[index1] - 1
+        if index2 > -1:
+            arr[index2] = arr[index2] - 1
+    print(times)
+
+# 获取至多两个数的index
+def GetIndex():
+    tempIndex1 = -1
+    tempIndex2 = -1
+    if arr[0] > 0:
+        tempIndex1 = 0
+    if arr[1] > 0:
+        tempIndex2 = 1
+    if arr[2] > 0:
+        if arr[2] > arr[0]:
+            tempIndex1 = 2
+        elif arr[2] > arr[1]:
+            tempIndex2 = 2
+        else:
+            pass
+    return tempIndex1, tempIndex2 
+
+GetOpTime()
