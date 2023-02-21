@@ -37,7 +37,7 @@ rootfile = "C:/Users/xiaojiang/Desktop/pycopy"
         # if os.path.isfile(full_file_name):
                 
 
- #指定文件夹下搜索某个文件
+ #指定文件夹下搜索某个文件~
 def scaner_file (url, fileName):
         file  = os.listdir(url)
         for f in file:
@@ -85,6 +85,23 @@ def update_file (targetUrl, updateFileAbsUrl, updateFileName):
                         pass
 
 # scaner_file(rootfile)
+# 读取资源文件兵保存
+saveList = {}
+def saveResNew(url):
+        file = os.listdir(url)
+        for f in file:
+                real_url = path.join(url, f)
+                if path.isfile(real_url):
+                        if f in saveList:
+                                print("\t 重复文件名 ：" + f)
+                                saveList.pop(f)
+                        else:
+                                saveList[f] = real_url
+                elif path.isdir(real_url):
+                        saveResNew(real_url)
+                else:
+                        print("其他情况！")
+                        pass
 update_file(rootfile, src1, "test.txt")
 
 
