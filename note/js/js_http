@@ -1,0 +1,37 @@
+在Node.js中发送HTTP POST请求，你可以使用Node.js标准库中的HTTP模块。下面是一个简单的例子：
+
+```javascript
+const http = require('http');
+
+const options = {
+  hostname: 'www.example.com',
+  path: '/submit',
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+};
+
+const data = {
+  foo: 'bar'
+};
+
+const req = http.request(options, res => {
+  console.log(`statusCode: ${res.statusCode}`);
+
+  res.on('data', d => {
+    process.stdout.write(d);
+  });
+});
+
+req.on('error', error => {
+  console.error(error);
+});
+
+req.write(JSON.stringify(data));
+req.end();
+```
+
+这个例子发送一个HTTP POST请求到 `www.example.com/submit`，包含一个 JSON 数据 `{"foo": "bar"}`。在请求头中设置了 Content-Type 为 application/json。
+
+请注意，`http.request`方法返回一个可写流（Writable Stream），你需要使用 `.write`方法发送请求数据，最后用 `.end`方法结束请求。另外，你需要监听响应的 `data` 事件来读取响应数据。
