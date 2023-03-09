@@ -8,3 +8,8 @@ url = "https://api.seniverse.com/v3/weather/now.json?key={}&location=chengdu&lan
 
 res = requests.get(url)
 print(res.content.decode('utf-8'))  # 打印结果
+
+# 获取经纬度
+# posUrl = "https://ipinfo.io/json"
+# res = requests.get(posUrl)
+# print(res.content)  # 打印结果
