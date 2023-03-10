@@ -1,0 +1,16 @@
+微信小程序 page 的生命周期函数如下：
+
+onLoad(options): 当页面加载完成时，会触发该事件。
+onShow(): 当页面展示出来时，会触发该事件。
+onReady(): 当页面初次渲染完成时，会触发该事件。
+onHide(): 当页面隐藏起来时，会触发该事件。
+onUnload(): 当页面卸载掉之前，会触发该事件。
+onPullDownRefresh(): 当用户下拉刷新时，会触发该事件。
+onReachBottom(): 当用户滚动到页面底部时，会触发该事件。
+onShareAppMessage(Object object): 当用户点击分享按钮或右上角菜单的转发按钮时，会触发该事件。
+onPageScroll(Object object): 当在页面上下滚动时，会触发该事件。
+onResize(Object res): 当页面尺寸变化时，会触发该事件。
+onTabItemTap(Object item): 当用户点击 Tab 时，会触发该事件。
+注意：所有生命周期函数都是以 on 开头。
+
+微信小程序列表显示名字和可编辑出生日期
