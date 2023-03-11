@@ -1,0 +1,12 @@
+void SetLayerRecursively(GameObject obj, string layerName)
+{
+    // 设置当前对象的层级
+    obj.layer = LayerMask.NameToLayer(layerName);
+ 
+    // 递归处理子对象
+    foreach (Transform child in obj.transform)
+    {
+        SetLayerRecursively(child.gameObject, layerName);
+    }
+}
+在上述代码中，SetLayerRecursively 方法会对 obj 中每个子对象递归应用更改层级的操作。

@@ -1,0 +1,46 @@
+Lua 中的元表（metatable）是指一个作为 Lua 对象模拟的冥等附加值。当一个对象需要执行某种操作（例如算术运算或访问），但是该对象本身不能直接执行该操作时，可以使用元表。
+
+在 Lua 中，通过设置一个表为另一个表的元表来实现元表的操作。用于元表操作的函数在 lua 中被广泛使用。例如，当以下两个变量执行一个加法时：
+
+local a = 10
+local b = 20
+local sum = a + b
+
+
+
+如果我们将第一个变量 a 的元表修改，则结果会改变：
+local a = setmetatable({ value = 10 }, { __add = function(a, b) return a.value + b.value end })
+local b = { value = 20 }
+local sum = a + b -- Called the __add metamethod of a's metatable.
+print(sum) -- Output: 30
+
+
+上面的示例覆盖了 __add 元方法，使 a 和 b 可以相加并返回它们的值。在这个过程中，实际上调用了 a 的元表中的 __add 函数来完成操作。
+
+元表还具有其他常见的方法，在 lua 之中被广泛应用。获得完全理解元表的方法是了解它在语言中的应用，包括重载内置运算符和提供通用行为的代码重用。
+
+
+
+
+
+
+在 Lua 中并没有传递指针这一概念，所有的参数都是值。对于 table 和其他数据类型，在传递的过程中会涉及到浅拷贝和深拷贝。其中：
+
+如果是赋值语句或函数调用传参时，table 是浅拷贝的，也就是说只是简单的将原 table 的引用传递过去，改变新旧 table 中任何一个的大小、内容时，都会影响到另一个；
+如果是文件操作等场景下使用 io.write 输出，由于其自身有一个优化机制会摆脱 Lua 表，导致传输数据无法处理。
+但是我们也可以通过将要传递的 table 存放到 另一个 table 中来模拟出类似传指针（对象）的效果，示例代码如下：
+local function modify(t)
+    t.a = "changed"
+end
+
+local tb = { a = "original" }
+print(tb.a) --> "original"
+
+-- 传递表。
+modify(tb)
+print(tb.a) --> "changed"
+
+-- 传递包含表的表。
+local wrapper = { tb = tb }
+modify(wrapper.tb)
+print(tb.a) --> "changed"
