@@ -1,0 +1,4 @@
+installBAT---插件安装
+path---搜索路径或者直接写到单个表也行 ， /\路径符号无所谓
+search---入口
+注：python环境是前提条件 如果没有 https://blog.csdn.net/hugo233/article/details/122686074
