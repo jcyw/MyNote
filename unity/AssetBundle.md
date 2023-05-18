@@ -47,7 +47,7 @@ AssetBundle使用步骤：
 
     依赖打包：将需要同时加载的资源放在同一个包里，各个包之间会保存相互的依赖关系
 
-Assetbundle加载和卸载
+Assetbundle加载和卸载（[ab包不能重复加载不然会报错](https://www.bilibili.com/video/BV1LD4y1m7kF/?p=5&spm_id_from=pageDriver&vd_source=ef1db1252fb9dd8731a4cdb51b331323)）【[异步](https://www.bilibili.com/video/BV1LD4y1m7kF/?p=6&spm_id_from=pageDriver&vd_source=ef1db1252fb9dd8731a4cdb51b331323)】
     AB加载 ： 开发阶段AB包存放在本地，开发结束后上传服务器
         1、Assetbundle.LoadFromFile : 从本地加载
 
@@ -121,4 +121,8 @@ public class LoadFromLocal : MonoBehaviour
         Reources.UnloadAsset(Object) //释放已加载的资源Object
         Resources.UnloadUnusedAssets //卸载所有没有被场景引用的资源对象
 
-*依赖： 如果一个材质球被一个预制体引用 ， 但是材质球没有分包 ， 那么这个材质球将自动被分到与引用预制体一个包 ， 如果材质球和预制体不在同一个包 ， 那么加载预制体之前必须先加载材质球所在的ab包 ， 不然预制体将材质丢失*
+*依赖： 如果一个材质球被一个预制体引用 ， 但是材质球没有分包 ， 那么这个材质球将自动被分到与引用预制体一个包 ， 如果材质球和预制体不在同一个包 ， 那么加载预制体之前必须先加载材质球所在的ab包 ， 不然预制体将材质丢失[主包中可以得到依赖]*
+
+![1684422169675](image/AssetBundle/1684422169675.png)
+
+*这里也有个缺陷就是，这里的依赖是model这个ab包所有资源的依赖包 ， 不是model里面某个资源的依赖*
