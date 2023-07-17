@@ -1,5 +1,7 @@
 import tkinter as tk
 from datetime import datetime
+from pyToGPT import askGPT
+import asyncio
 
 root = tk.Tk()
 
@@ -32,12 +34,15 @@ canvas.create_window((0, 0), anchor="nw", window=text_label)
 record_list = []
 
 # 创建按钮，绑定展示文本的函数
-def show_text():
+async def show_text():
     # 获取当前时间
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
-    # 获取输入文本
-    text = input_box.get()
+    try:
+
+        # 获取输入文本
+        text = await asyncio.wait_for(askGPT(input_box.get()), timeout=10)
+    except asyncio.TimeoutError:
+        text = "请求超时！请重试"
     
     # 构建记录字符串
     record = f"{current_time}: {text}"
@@ -48,8 +53,8 @@ def show_text():
     # 更新展示区域中的文本
     text_label.config(text="\n".join(record_list))
 
-show_button = tk.Button(root, text="show", command=show_text)
-show_button.pack(side=tk.BOTTOM)
+search_button = tk.Button(root, text="搜索", command=lambda: asyncio.run(show_text()))
+search_button.pack(side=tk.BOTTOM)
 
 # 将展示区域的Frame添加到主窗口中
 canvas_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)

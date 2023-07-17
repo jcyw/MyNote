@@ -13,19 +13,16 @@ for child in root.iter('displayList'):
             print(item.text)
 
 
-; import xml.etree.ElementTree as ET
-
-; # 解析XML文件
-; tree = ET.parse('filename.xml')
-; root = tree.getroot()
-
-; # 遍历所有控件
-; for child in root.iter('displayList'):
-;     for item in child.iter('text'):
-;         # 检查是否设置了“发布时清空”
-;         if item.get('autoClearText') is None:
-;             # 如果没有设置，则将其设置为“true”
-;             item.set('autoClearText', 'true')
-
-; # 将更改后的XML保存到文件
-; tree.write('filename.xml')
+# #  import xml.etree.ElementTree as ET
+#  解析XML文件
+# #  tree = ET.parse('filename.xml')
+# # #  root = tree.getroot()
+#  遍历所有控件
+# #  for child in root.iter('displayList'):
+#     #  for item in child.iter('text'):
+#          检查是否设置了“发布时清空”
+#         #  if item.get('autoClearText') is None:
+#              如果没有设置，则将其设置为“true”
+#             # #  item.set('autoClearText', 'true')
+#  将更改后的XML保存到文件
+# #  tree.write('filename.xml')
