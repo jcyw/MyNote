@@ -3,7 +3,7 @@
 远程仓库
 	创建ssh key
 		cd ~/.ssh
-		ssh -keygen -t rsa -C "youremail@example.coom"
+		ssh-keygen -t rsa -C "youremail@example.coom"
 	判断是否连通
 		ssh -T git@github.com(第一次会有警告)
 
